@@ -33,11 +33,3 @@ function randomSymbol() {
   var symbols = '!!@#$%^&*(){}[]/,.';
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
-
-// object for storing bool values
-var randomFunc = {
-  lower: randomLower,
-  upper: randomUpper,
-  number: randomNumber,
-  symbol: randomSymbol,
-}

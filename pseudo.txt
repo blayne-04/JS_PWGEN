@@ -1,0 +1,4 @@
+Take bool user input for upper, lower, number and special character
+compare all inputs to the value "false" if they are false then dont include them in the final loop
+loop through randomized values for a set length given by the user
+counter_length <= 20 and everytime a function adds a character to the output string it adds +1 to counter_length 
