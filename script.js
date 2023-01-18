@@ -13,6 +13,7 @@ function writePassword() {
 }
 
 
+console.log (lowercaseToggle)
 //functions for fetching random characters
 function randomLower(){
   var lower = 'abcdefghijklmnopqrstuvwxyz';
