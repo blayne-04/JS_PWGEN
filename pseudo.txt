@@ -2,3 +2,6 @@ array of toggleables = array 1
 cycle through array 1 while comparing it to the boolean value false
 array[i] false
 if false delete[i]
+else add [i] to array toggle_on
+cycle through toggle_on and add a character from the indexed function at [i]
+repeat for passwordLength amount of times
