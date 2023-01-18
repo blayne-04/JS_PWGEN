@@ -1,0 +1,4 @@
+array of toggleables = array 1
+cycle through array 1 while comparing it to the boolean value false
+array[i] false
+if false delete[i]

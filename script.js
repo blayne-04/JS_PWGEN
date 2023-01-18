@@ -14,30 +14,6 @@ function writePassword() {
 
   passwordText.value = password;
 }
-//boolean value storage
-
-var lowerToggle;
-var upperToggle;
-var numToggle;
-var specToggle;
-var passwordLength;
-
-//User prompts
-
-lowerToggle = confirm(" Would you like to include lowercase letters?"  )
-upperToggle = confirm("Would you like to include uppercase letters?")
-numToggle = confirm("Would you like to include numbers?")
-specToggle = confirm("Would you like to include special characters?")
-
-//Length prompt that only accepts 8-128
-
-while(true){
-  passwordLength = parseInt(prompt("Enter a length between 8 and 128 for your password"))
-  if (passwordLength >= 8 && passwordLength <= 128){
-    break;
-  }
-  alert("please select a number between 8 and 128");
-}
 
 //functions for fetching random characters
 
@@ -61,15 +37,34 @@ function randomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
-var randomFunc = {
-  lower: randomLower,
-  upper: randomUpper,
-  number: randomNumber,
-  special: randomSymbol,
-}
 
 //Function for generating password
 
-function generatePassword(lower, upper, number, symbol, passwordLength){
+function generatePassword(){
 
+  //input for toggles
+var lowerToggle = confirm(" Would you like to include lowercase letters?")
+var upperToggle = confirm("Would you like to include uppercase letters?")
+var numToggle = confirm("Would you like to include numbers?")
+var specToggle = confirm("Would you like to include special characters?")
+var randomFunc = [{lowerToggle},{upperToggle},{numToggle},{specToggle}]
+console.log (randomFunc)
+  //input for password length
+var passwordLength
+while(true){
+  passwordLength = parseInt(prompt("Enter a length between 8 and 128 for your password"))
+  if (passwordLength >= 8 && passwordLength <= 128){
+    break;
+  }
+  alert("please select a number between 8 and 128");
 }
+//make an empty container for the password
+let password = ""
+//for loop to run through randomFunc and remove false statements
+for (i=0; i < randomFunc.length; i++){
+  if(randomFunc[i] === false){
+    delete randomFunc[i]
+  } else{
+    
+  }
+}}
