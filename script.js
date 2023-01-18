@@ -38,7 +38,6 @@ while(true){
   }
   alert("please select a number between 8 and 128");
 }
-console.log(passwordLength)
 
 //functions for fetching random characters
 
@@ -62,5 +61,15 @@ function randomSymbol() {
   return symbols[Math.floor(Math.random() * symbols.length)];
 }
 
+var randomFunc = {
+  lower: randomLower,
+  upper: randomUpper,
+  number: randomNumber,
+  special: randomSymbol,
+}
+
 //Function for generating password
-function generatePassword
+
+function generatePassword(lower, upper, number, symbol, passwordLength){
+
+}
