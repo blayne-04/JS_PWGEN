@@ -1,55 +1,42 @@
-// Assignment Code
-
+// Add event listener to generate button
 var generateBtn = document.querySelector("#generate");
 
-// Add event listener to generate button
-
+// Write password to the #password input
 generateBtn.addEventListener("click", writePassword)
 
-// Write password to the #password input
-
+//Function for generating password
 function writePassword() {
   var password = generatePassword();
   var passwordText = document.querySelector("#password");
-
+  console.log(password)
   passwordText.value = password;
 }
 
-//functions for fetching random characters
-
-function randomLower(){
-  var lower = 'abcdefghijklmnopqrstuvwxyz';
-  return lower[Math.floor(Math.random() * lower.length)];
-}
-
-function randomUpper(){
-  var upper = 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
-  return upper[Math.floor(Math.random() * upper.length)]
-}
-
-function randomNumber(){
-  var numbers = '0123456789'
-  return numbers[Math.floor(Math.random() * numbers.length)]
-}
-
-function randomSymbol() {
-  var symbols = '!!@#$%^&*(){}[]/,.';
-  return symbols[Math.floor(Math.random() * symbols.length)];
-}
-
-
-//Function for generating password
-
+//function for generating password 
 function generatePassword(){
+  
+//makes an empty string for options
+var options = ''
 
-  //input for toggles
-var lowerToggle = confirm(" Would you like to include lowercase letters?")
+//input for toggles, adds respective strings to options when user selects true
+var lowerToggle = confirm(" Would you like to include lowercase letters?") 
+if (lowerToggle === true){
+  options += 'abcdefghijklmnopqrstuvwxyz'
+}
 var upperToggle = confirm("Would you like to include uppercase letters?")
+if(upperToggle === true){
+  options += 'ABCDEFGHIJKLMNOPQRSTUVWXYZ'
+}
 var numToggle = confirm("Would you like to include numbers?")
+if(numToggle === true){
+  options += '0123456789'
+}
 var specToggle = confirm("Would you like to include special characters?")
-var randomFunc = [{lowerToggle},{upperToggle},{numToggle},{specToggle}]
-console.log (randomFunc)
-  //input for password length
+if(specToggle === true){
+  options += '!!@#$%^&*(){}[]/,.'
+}
+
+//input for password length
 var passwordLength
 while(true){
   passwordLength = parseInt(prompt("Enter a length between 8 and 128 for your password"))
@@ -59,12 +46,16 @@ while(true){
   alert("please select a number between 8 and 128");
 }
 //make an empty container for the password
-let password = ""
-//for loop to run through randomFunc and remove false statements
-for (i=0; i < randomFunc.length; i++){
-  if(randomFunc[i] === false){
-    delete randomFunc[i]
-  } else{
-    
-  }
-}}
+let password = ''
+
+//function that takes all the inputs from the toggle statements and randomly selects from the included characters while adding to the empty password string
+function passwordGen(){
+  for(i = 0; i<passwordLength; i++)
+password += options[Math.floor(Math.random() * options.length)];
+}
+//calls passwordGen
+passwordGen()
+//sets the return value for the function "generatePassword" to "password" 
+return (password)
+}
+
