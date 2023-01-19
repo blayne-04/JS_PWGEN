@@ -17,6 +17,3 @@ Code Snippets that helped alot
 ![Demo of Project](./assets/demo.png)
 
 ## Live URL: https://blayne-04.github.io/JS_PWGEN/
-
-## UNFINISHED
-currently the generator has all of the functions and arrays in place to make the final loop but the logic behind the final loop eludes me.
